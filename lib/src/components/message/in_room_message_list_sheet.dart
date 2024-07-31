@@ -2,26 +2,28 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:zego_uikit/zego_uikit.dart';
 
 // Project imports:
 import 'package:zego_uikit_prebuilt_video_conference/src/components/icon_defines.dart';
 import 'package:zego_uikit_prebuilt_video_conference/src/components/pop_up_manager.dart';
+import 'package:zego_uikit_prebuilt_video_conference/zego_uikit_prebuilt_video_conference.dart';
 
 /// @nodoc
 class ZegoVideoConferenceMessageListSheet extends StatefulWidget {
   const ZegoVideoConferenceMessageListSheet({
-    Key? key,
+    super.key,
     this.avatarBuilder,
     this.itemBuilder,
     this.scrollController,
     this.rootNavigator = false,
-  }) : super(key: key);
+    required this.config,
+  });
 
   final bool rootNavigator;
   final ZegoAvatarBuilder? avatarBuilder;
   final ZegoInRoomMessageItemBuilder? itemBuilder;
   final ScrollController? scrollController;
+  final ZegoUIKitPrebuiltVideoConferenceConfig config;
 
   @override
   State<ZegoVideoConferenceMessageListSheet> createState() =>
@@ -77,16 +79,18 @@ class _ZegoVideoConferenceMessageListSheetState
 
   Widget bottomBar({required double height}) {
     return Positioned(
-      left: 0,
-      right: 0,
-      bottom: 0,
-      height: height,
-      child: ZegoInRoomMessageInput(
-        placeHolder: 'Send a message to everyone',
-        autofocus: false,
-        focusNotifier: focusNotifier,
-      ),
-    );
+        left: 0,
+        right: 0,
+        bottom: 0,
+        height: height,
+        child: widget.config.customButtonChat
+        // ??
+        //     ZegoInRoomMessageInput(
+        //       placeHolder: 'Send a message to everyone',
+        //       autofocus: false,
+        //       focusNotifier: focusNotifier,
+        //     ),
+        );
   }
 
   Widget messageList({
@@ -106,14 +110,19 @@ class _ZegoVideoConferenceMessageListSheetState
             child: ConstrainedBox(
               constraints: BoxConstraints.loose(Size(690.zW, height)),
               child: Scaffold(
-                resizeToAvoidBottomInset: true,
-                backgroundColor: Colors.transparent,
-                body: ZegoInRoomChatView(
-                  avatarBuilder: widget.avatarBuilder,
-                  itemBuilder: widget.itemBuilder,
-                  scrollController: widget.scrollController,
-                ),
-              ),
+                  resizeToAvoidBottomInset: true,
+                  backgroundColor: Colors.transparent,
+
+                  /// TODO: CHANGE LIST CHAT ZEGO TO CHAT TAARUF
+                  body: widget.config
+                      .customChatList(context, widget.scrollController)
+                  //     ??
+                  // ZegoInRoomChatView(
+                  //   avatarBuilder: widget.avatarBuilder,
+                  //   itemBuilder: widget.itemBuilder,
+                  //   scrollController: widget.scrollController,
+                  // ),
+                  ),
             ),
           ),
           Container(height: lineHeight, color: Colors.white.withOpacity(0.15)),
@@ -176,6 +185,7 @@ void showMessageSheet(
   bool rootNavigator = false,
   required ZegoPopUpManager popUpManager,
   required ValueNotifier<bool> visibleNotifier,
+  required ZegoUIKitPrebuiltVideoConferenceConfig config,
 }) {
   visibleNotifier.value = true;
 
@@ -207,6 +217,7 @@ void showMessageSheet(
               itemBuilder: itemBuilder,
               scrollController: scrollController,
               rootNavigator: rootNavigator,
+              config: config,
             ),
           ),
         ),

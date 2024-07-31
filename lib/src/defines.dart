@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 /// Predefined buttons that can be added to the top or bottom toolbar.
 /// By configuring these options, users can customize their own top menu bar or bottom toolbar.
 /// This enum type is used in ZegoUIKitPrebuiltVideoConferenceConfig.bottomMenuBarConfig and ZegoUIKitPrebuiltVideoConferenceConfig.topMenuBarConfig.
@@ -35,3 +37,8 @@ enum SoundWaveType {
   /// display sound wave animation around the avatar according to volume
   aroundAvatar,
 }
+
+typedef TaarufChatView = Widget Function(
+  BuildContext context,
+  ScrollController? scrollController,
+);

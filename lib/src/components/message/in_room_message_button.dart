@@ -5,18 +5,19 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:zego_uikit/zego_uikit.dart';
 
 // Project imports:
 import 'package:zego_uikit_prebuilt_video_conference/src/components/icon_defines.dart';
 import 'package:zego_uikit_prebuilt_video_conference/src/components/message/in_room_message_list_sheet.dart';
 import 'package:zego_uikit_prebuilt_video_conference/src/components/pop_up_manager.dart';
+import 'package:zego_uikit_prebuilt_video_conference/zego_uikit_prebuilt_video_conference.dart';
 
 /// @nodoc
 /// switch cameras
+/// TODO: CHANGE CHAT TO OWN MESSAGE
 class ZegoInRoomMessageButton extends StatefulWidget {
   const ZegoInRoomMessageButton({
-    Key? key,
+    super.key,
     required this.popUpManager,
     required this.viewVisibleNotifier,
     this.afterClicked,
@@ -26,7 +27,10 @@ class ZegoInRoomMessageButton extends StatefulWidget {
     this.avatarBuilder,
     this.itemBuilder,
     this.rootNavigator = false,
-  }) : super(key: key);
+    required this.config,
+  });
+
+  final ZegoUIKitPrebuiltVideoConferenceConfig config;
 
   final ButtonIcon? icon;
 
@@ -73,6 +77,7 @@ class _ZegoInRoomMessageButtonState extends State<ZegoInRoomMessageButton> {
           scrollController: scrollController,
           rootNavigator: widget.rootNavigator,
           popUpManager: widget.popUpManager,
+          config: widget.config,
         );
 
         if (widget.afterClicked != null) {

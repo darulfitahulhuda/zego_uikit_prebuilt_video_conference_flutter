@@ -31,7 +31,7 @@ class ZegoTopMenuBar extends StatefulWidget {
   final ZegoPopUpManager popUpManager;
 
   const ZegoTopMenuBar({
-    Key? key,
+    super.key,
     required this.config,
     required this.visibilityNotifier,
     required this.restartHideTimerNotifier,
@@ -42,7 +42,7 @@ class ZegoTopMenuBar extends StatefulWidget {
     this.height,
     this.borderRadius,
     this.backgroundColor,
-  }) : super(key: key);
+  });
 
   @override
   State<ZegoTopMenuBar> createState() => _ZegoTopMenuBarState();
@@ -315,6 +315,7 @@ class _ZegoTopMenuBarState extends State<ZegoTopMenuBar> {
           itemBuilder: widget.config.chatViewConfig.itemBuilder,
           viewVisibleNotifier: widget.chatViewVisibleNotifier,
           popUpManager: widget.popUpManager,
+          config: widget.config,
         );
       case ZegoMenuBarButtonName.toggleScreenSharingButton:
         return ZegoScreenSharingToggleButton(

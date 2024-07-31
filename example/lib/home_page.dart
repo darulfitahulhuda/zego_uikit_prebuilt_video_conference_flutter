@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'video_conference_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<StatefulWidget> createState() => _HomePageState();

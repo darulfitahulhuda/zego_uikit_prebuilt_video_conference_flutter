@@ -28,7 +28,7 @@ import 'package:zego_uikit_prebuilt_video_conference/src/controller.dart';
 /// {@category Configs}
 class ZegoUIKitPrebuiltVideoConference extends StatefulWidget {
   const ZegoUIKitPrebuiltVideoConference({
-    Key? key,
+    super.key,
     required this.appID,
     required this.appSign,
     required this.conferenceID,
@@ -37,7 +37,7 @@ class ZegoUIKitPrebuiltVideoConference extends StatefulWidget {
     required this.config,
     this.controller,
     @Deprecated('Since 2.2.1') this.appDesignSize,
-  }) : super(key: key);
+  });
 
   /// You can create a project and obtain an appID from the [ZEGOCLOUD Admin Console](https://console.zegocloud.com).
   final int appID;

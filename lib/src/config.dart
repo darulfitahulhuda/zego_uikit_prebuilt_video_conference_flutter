@@ -32,6 +32,8 @@ class ZegoUIKitPrebuiltVideoConferenceConfig {
     ZegoMemberListConfig? memberListConfig,
     ZegoInRoomNotificationViewConfig? notificationViewConfig,
     ZegoInRoomChatViewConfig? chatViewConfig,
+    required this.customButtonChat,
+    required this.customChatList,
   })  : audioVideoViewConfig =
             audioVideoViewConfig ?? ZegoPrebuiltAudioVideoViewConfig(),
         topMenuBarConfig = topMenuBarConfig ??
@@ -43,6 +45,9 @@ class ZegoUIKitPrebuiltVideoConferenceConfig {
         chatViewConfig = chatViewConfig ?? ZegoInRoomChatViewConfig() {
     layout ??= ZegoLayout.gallery();
   }
+
+  TaarufChatView customChatList;
+  Widget customButtonChat;
 
   /// Whether to open the camera when joining the video conference.
   ///
@@ -284,6 +289,8 @@ class ZegoUIKitPrebuiltVideoConferenceConfig {
 
   /// error stream
   Function(ZegoUIKitError)? onError;
+
+  // Function(BuildContext context, ZegoRoomMessage message)? onChatMessage;
 }
 
 /// Configuration options for audio/video views.
