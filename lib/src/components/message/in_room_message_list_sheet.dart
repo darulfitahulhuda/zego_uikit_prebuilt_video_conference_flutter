@@ -50,7 +50,7 @@ class _ZegoVideoConferenceMessageListSheetState
   @override
   Widget build(BuildContext context) {
     final viewHeight = MediaQuery.of(context).size.height * 0.85;
-    final bottomBarHeight = 110.zH;
+    // final bottomBarHeight = 110.zH;
     final headerHeight = 98.zH;
     final lineHeight = 1.zR;
 
@@ -67,7 +67,7 @@ class _ZegoVideoConferenceMessageListSheetState
           height: viewHeight -
               headerHeight -
               lineHeight -
-              bottomBarHeight -
+              // bottomBarHeight -
               lineHeight,
           top: headerHeight + lineHeight,
           lineHeight: lineHeight,
@@ -114,7 +114,7 @@ class _ZegoVideoConferenceMessageListSheetState
                   resizeToAvoidBottomInset: true,
                   backgroundColor: Colors.transparent,
 
-                  /// TODO: CHANGE LIST CHAT ZEGO TO CHAT TAARUF
+                  ///
                   body: widget.config
                       .customChatList(context, widget.scrollController)
                   //     ??

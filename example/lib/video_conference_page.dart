@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:zego_uikit_prebuilt_video_conference/zego_uikit_prebuilt_video_conference.dart';
-import 'package:zego_uikit_prebuilt_video_conference_example/widget/custom_chat_button.dart';
 
 import 'constants.dart';
 
