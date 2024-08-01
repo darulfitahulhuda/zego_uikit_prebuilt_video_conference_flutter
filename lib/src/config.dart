@@ -32,7 +32,7 @@ class ZegoUIKitPrebuiltVideoConferenceConfig {
     ZegoMemberListConfig? memberListConfig,
     ZegoInRoomNotificationViewConfig? notificationViewConfig,
     ZegoInRoomChatViewConfig? chatViewConfig,
-    required this.customButtonChat,
+    // required this.customButtonChat,
     required this.customChatList,
   })  : audioVideoViewConfig =
             audioVideoViewConfig ?? ZegoPrebuiltAudioVideoViewConfig(),
@@ -47,7 +47,7 @@ class ZegoUIKitPrebuiltVideoConferenceConfig {
   }
 
   TaarufChatView customChatList;
-  Widget customButtonChat;
+  // Widget customButtonChat;
 
   /// Whether to open the camera when joining the video conference.
   ///

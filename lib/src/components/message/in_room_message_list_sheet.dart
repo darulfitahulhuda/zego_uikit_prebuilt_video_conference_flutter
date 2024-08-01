@@ -72,26 +72,27 @@ class _ZegoVideoConferenceMessageListSheetState
           top: headerHeight + lineHeight,
           lineHeight: lineHeight,
         ),
-        bottomBar(height: bottomBarHeight),
+
+        // bottomBar(height: bottomBarHeight),
       ],
     );
   }
 
-  Widget bottomBar({required double height}) {
-    return Positioned(
-        left: 0,
-        right: 0,
-        bottom: 0,
-        height: height,
-        child: widget.config.customButtonChat
-        // ??
-        //     ZegoInRoomMessageInput(
-        //       placeHolder: 'Send a message to everyone',
-        //       autofocus: false,
-        //       focusNotifier: focusNotifier,
-        //     ),
-        );
-  }
+  // Widget bottomBar({required double height}) {
+  //   return Positioned(
+  //       left: 0,
+  //       right: 0,
+  //       bottom: 0,
+  //       height: height,
+  //       child: widget.config.customButtonChat
+  // ??
+  //     ZegoInRoomMessageInput(
+  //       placeHolder: 'Send a message to everyone',
+  //       autofocus: false,
+  //       focusNotifier: focusNotifier,
+  //     ),
+  // );
+  // }
 
   Widget messageList({
     required double height,

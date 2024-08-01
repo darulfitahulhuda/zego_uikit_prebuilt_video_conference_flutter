@@ -25,7 +25,7 @@ class VideoConferencePage extends StatelessWidget {
         userName: "user_$localUserID",
         conferenceID: conferenceID,
         config: ZegoUIKitPrebuiltVideoConferenceConfig(
-          customButtonChat: const CustomChatButton(),
+          // customButtonChat: const CustomChatButton(),
           customChatList: (context, scrollController) => Container(
             alignment: Alignment.center,
             child: const Text(
