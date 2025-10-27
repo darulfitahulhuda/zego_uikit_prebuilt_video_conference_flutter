@@ -14,7 +14,6 @@ import 'package:zego_uikit_prebuilt_video_conference/zego_uikit_prebuilt_video_c
 
 /// @nodoc
 /// switch cameras
-/// TODO: CHANGE CHAT TO OWN MESSAGE
 class ZegoInRoomMessageButton extends StatefulWidget {
   const ZegoInRoomMessageButton({
     super.key,
